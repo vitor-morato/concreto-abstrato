@@ -1,5 +1,5 @@
 // Increment the version whenever any shipped resource changes.
-const CACHE = 'concreto-abstrato-v10';
+const CACHE = 'concreto-abstrato-v11';
 const ROOT = new URL('./', self.location.href);
 const FILES = ['./','./index.html','./styles.css','./aplicativo.js','./regras.js','./palavras.js','./manifest.webmanifest','./assets/fonts/RubikDirt-Regular.ttf','./assets/fonts/OFL.txt','./assets/icons/icon.svg','./assets/icons/icon-192.png','./assets/icons/icon-512.png','./assets/icons/maskable-512.png'];
 self.addEventListener('install',event => {

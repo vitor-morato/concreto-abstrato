@@ -1,173 +1,22 @@
 <!doctype html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000505" />
-    <meta
-      name="description"
-      content="Jogo de cartas para duas pessoas ou solo contra O Trovador."
-    />
-    <title>Já era uma vez.</title>
-    <link rel="manifest" href="./manifesto.webmanifest" />
-    <link rel="icon" href="./imagens/icones/Icone.png?v=104" type="image/png" sizes="16x16" />
-    <link rel="icon" href="./imagens/icones/icone_32.png?v=104" type="image/png" sizes="32x32" />
-    <link
-      rel="apple-touch-icon"
-      href="./imagens/icones/apple_touch_180.png?v=104"
-      sizes="180x180"
-    />
-    <link rel="stylesheet" href="./estilos/estilo.css" />
-    <link rel="stylesheet" href="./estilos/padroes.css" />
-  </head>
-  <body class="apresentando">
-    <section
-      id="apresentacao"
-      class="apresentacao_jogo"
-      role="status"
-      aria-label="Abrindo Já era uma vez."
-    >
-      <div class="apresentacao_pagina">
-        <span class="apresentacao_fita" aria-hidden="true"></span>
-        <div class="apresentacao_emblema">
-          <img src="./imagens/icones/Icone.png" width="144" height="144" alt="" draggable="false" />
-        </div>
-        <div class="apresentacao_titulo">
-          <h1><span>Já era</span><span>uma vez.</span></h1>
-          <p>Vire a página.</p>
-        </div>
-        <div class="apresentacao_carregamento">
-          <span>ABRINDO O JOGO</span>
-          <div
-            class="apresentacao_barra"
-            role="progressbar"
-            aria-label="Abrindo o jogo"
-            aria-valuemin="0"
-            aria-valuemax="100"
-            aria-valuenow="0"
-          >
-            <span></span>
-          </div>
-        </div>
-      </div>
-    </section>
-    <header class="cabecalho">
-      <div class="marca titulo_marca">
-        <span class="marca_inicio">Já era</span> <span class="marca_final">uma vez.</span>
-      </div>
-      <button id="regras" hidden aria-label="Abortar partida"></button>
-    </header>
-    <main id="aplicacao"></main>
-    <p id="mensagem" role="status" aria-live="polite"></p>
-    <footer>
-      <span id="offline" hidden></span><button id="instalar" hidden>Instalar jogo</button>
-    </footer>
-    <dialog id="consulta" aria-labelledby="titulo_consulta">
-      <header><h2 id="titulo_consulta">LIVRO DE REGRAS</h2></header>
-      <div id="conteudo_consulta"></div>
-      <div class="camada_marcador_sumario" hidden>
-        <button
-          id="fechar_consulta"
-          class="marcador_sumario marcador_fechar"
-          type="button"
-          aria-label="Fechar livro de regras"
-          title="Fechar livro de regras"
-        >
-          <span class="icone_sumario" aria-hidden="true"
-            ><svg
-              class="icone_navegacao"
-              viewBox="0 0 24 24"
-              aria-hidden="true"
-              focusable="false"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2.5"
-              stroke-linecap="square"
-              stroke-linejoin="miter"
-            >
-              <path d="m6 6 12 12M18 6 6 18" /></svg
-          ></span></button
-        ><button
-          class="marcador_sumario"
-          type="button"
-          data-capitulo="sumario_manual"
-          aria-controls="sumario_manual"
-          aria-label="Voltar ao sumário"
-        >
-          <span class="icone_sumario" aria-hidden="true"
-            ><svg
-              class="icone_navegacao"
-              viewBox="0 0 24 24"
-              aria-hidden="true"
-              focusable="false"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2.5"
-              stroke-linecap="square"
-              stroke-linejoin="miter"
-            >
-              <path d="M9 7 4 12l5 5M4 12h10a5 5 0 0 0 0-10" /></svg
-          ></span>
-        </button>
-      </div>
-    </dialog>
-    <dialog
-      id="confirmacao"
-      class="confirmacao"
-      aria-labelledby="titulo_confirmacao"
-      aria-describedby="texto_confirmacao"
-    >
-      <form method="dialog">
-        <span class="sobretitulo">CONFIRMAR AÇÃO</span>
-        <h2 id="titulo_confirmacao"></h2>
-        <p id="texto_confirmacao"></p>
-        <div class="botoes_confirmacao navegacao_fitas">
-          <button
-            value="cancelar"
-            class="controle_fita fita_voltar"
-            aria-label="Voltar"
-            title="Voltar"
-            autofocus
-          >
-            <span aria-hidden="true"
-              ><svg
-                class="icone_navegacao"
-                viewBox="0 0 24 24"
-                aria-hidden="true"
-                focusable="false"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2.5"
-                stroke-linecap="square"
-                stroke-linejoin="miter"
-              >
-                <path d="M9 7 4 12l5 5M4 12h10a5 5 0 0 0 0-10" /></svg
-            ></span></button
-          ><button
-            id="aceitar_confirmacao"
-            value="confirmar"
-            class="primario controle_fita fita_iniciar"
-            aria-label="Confirmar"
-            title="Confirmar"
-          >
-            <span aria-hidden="true"
-              ><svg
-                class="icone_navegacao"
-                viewBox="0 0 24 24"
-                aria-hidden="true"
-                focusable="false"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2.5"
-                stroke-linecap="square"
-                stroke-linejoin="miter"
-              >
-                <path d="m4 12 5 5L20 6" /></svg
-            ></span>
-          </button>
-        </div>
-      </form>
-    </dialog>
-    <script type="module" src="./scripts/iniciar.js?v=257"></script>
-  </body>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#2B2D42">
+  <meta name="description" content="Substantivos e blefe. Todas as pessoas sabem. Quase todas. Jogo presencial para 3 a 5 pessoas.">
+  <title>Concreto"abstrato"</title>
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" href="./assets/icons/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./styles.css">
+  <script type="module" src="./aplicativo.js"></script>
+</head>
+<body>
+  <header><a href="./" id="brand" aria-label="Concreto abstrato, início">C<span>“a”</span></a><span>SUBSTANTIVOS E BLEFE</span><span class="edition">03—05 PESSOAS</span></header>
+  <main id="app" tabindex="-1"></main>
+  <footer><span>PRESENCIAL. CONCRETO. ABSTRATO.</span><span class="credits">Vitor <span class="credits-nickname">"Morato"</span> Theodoro Silva.</span></footer>
+  <span id="offline-status" hidden>Preparando uso offline…</span>
+  <p id="notice" role="status" hidden></p>
+  <noscript>Ative o JavaScript para jogar.</noscript>
+</body>
 </html>
